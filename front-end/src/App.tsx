@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from './components/Header';
-import Timeline from './components/Timeline';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PlantillaBase from './pages/PlantillaBase'; // Ruta actualizada
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <Header />
-      <Timeline />
-      {/* Aquí puedes agregar más contenido o componentes */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<PlantillaBase />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
