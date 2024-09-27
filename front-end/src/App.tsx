@@ -1,15 +1,18 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import PlantillaBase from './pages/PlantillaBase'; // Ruta actualizada
+import Comprobando from './pages/Comprobando';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
-const App: React.FC = () => {
+function App() {
   return (
     <Router>
+      <Header />
       <Routes>
-        <Route path="/" element={<PlantillaBase />} />
+        <Route path="/:id" element={<Comprobando />} />
       </Routes>
+      <Footer />
     </Router>
   );
-};
+}
 
 export default App;
