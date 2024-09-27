@@ -2,7 +2,6 @@ import { Navbar, NavbarBrand, NavbarContent, DropdownTrigger, Dropdown, Dropdown
 import 'primeicons/primeicons.css';
 import { cambiarTamanoFuente } from '../utils/cambiarTamañoFuente';
 import { useTranslation } from 'react-i18next';
-import '../styles/Header.css';  // Importar los estilos CSS
 
 const Header = () => {
     const { i18n } = useTranslation();
@@ -23,19 +22,21 @@ const Header = () => {
     };
 
     return (
-        <Navbar className="navbar">  {/* Aplica la clase CSS */}
+        <Navbar style={{ backgroundColor: 'rgb(253, 96, 96)' }}>
             <NavbarBrand>
                 <p className="font-bold text-inherit">TuristikApp</p>
             </NavbarBrand>
 
             <NavbarContent as="div" justify="end">
-                {/* Cambiar tamaño de fuente */}
+                {/* Botón para aumentar el tamaño de la fuente */}
                 <span
                     onClick={() => handleFontSizeChange(1)}
                     style={{ cursor: 'pointer', marginRight: '15px' }}
                 >
                     <i className="pi pi-plus"></i>
                 </span>
+
+                {/* Botón para reducir el tamaño de la fuente */}
                 <span
                     onClick={() => handleFontSizeChange(-1)}
                     style={{ cursor: 'pointer', marginRight: '15px' }}
@@ -43,23 +44,21 @@ const Header = () => {
                     <i className="pi pi-minus"></i>
                 </span>
 
-                {/* Dropdown para selección de idioma */}
+                {/* Dropdown para seleccionar el idioma */}
                 <Dropdown placement="bottom-end" onAction={handleSelect}>
                     <DropdownTrigger>
                         <Avatar
-                            isBordered
                             as="button"
-                            className="transition-transform"
-                            color="secondary"
-                            text="leng"
-                            size="sm"
+                            showFallback name='Lang'
+                            src='https://images.unsplash.com/broken'
+                            size="xl"
                         />
                     </DropdownTrigger>
                     <DropdownMenu aria-label="Language Selection">
-                        <DropdownItem key="es">es</DropdownItem>
-                        <DropdownItem key="en">en</DropdownItem>
-                        <DropdownItem key="fr">fr</DropdownItem>
-                        <DropdownItem key="pronto">pronto</DropdownItem>
+                        <DropdownItem key="es" onclick={() => handleLanguageChange('es')}>Español</DropdownItem>
+                        <DropdownItem key="en" onClick={() => handleLanguageChange('en')}>English</DropdownItem>
+                        <DropdownItem key="fr" onClick={() => handleLanguageChange('fr')}>Français</DropdownItem>
+                        <DropdownItem key="pronto" disabled>Pronto</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
             </NavbarContent>

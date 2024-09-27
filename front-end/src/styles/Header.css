@@ -1,6 +1,4 @@
-/* src/components/Header.module.css */
 .navbar {
-    background-color: red;  /* Fondo rojo */
-    color: white;  /* Opcional: cambiar color de texto para mejor legibilidad */
-  }
-  
+    background-color: rgb(253, 96, 96);  /* Fondo rojo */
+    color: black;  /* Opcional: cambiar color de texto para mejor legibilidad */
+}

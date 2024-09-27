@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Estilo principal del carrusel */
+.timeline {
+    padding: 50px 0 50px 0;
+    background-color: #f1f1f1; /* Fondo claro y suave */
+}
+
+.carousel {
+    position: relative;
+}
+
+.carousel-indicators {
+    top: -50px;
+    width: 75%;
+    margin-left: 12%;
+    position: static;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.carousel-indicators button {
+    text-indent: 0 !important;
+    background: transparent;
+    border: none;
+    margin: 0 !important;
+    position: relative;
+    width: auto !important;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    font-size: 24px; /* Aumentar el tamaño de la fuente */
+}
+
+.carousel-indicators button::before {
+    position: absolute;
+    content: "";
+    border-top: 2px solid #aaa;
+    width: 100%;
+    left: 0;
+}
+
+.carousel-indicators button h4 {
+    margin-top: -20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 22px;
+    color: #444; /* Color mejorado para mayor contraste */
+}
+
+.carousel-indicators button i {
+    margin-top: -7px;
+    position: absolute;
+    font-size: 30px; /* Tamaño del ícono más grande */
+    color: #888;
+}
+
+.carousel-indicators button:hover h4,
+.carousel-indicators button:hover i {
+    color: #000000;
+}
+
+.carousel-indicators button.active i,
+.carousel-indicators button.active h4 {
+    color: #28a745;
+    font-size: 26px;
+}
+
+/* Estilo de las diapositivas */
+.experience-slide-one {
+    padding: 20px 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Añadir una sombra para que resalte */
+}
+
+.experience-slide-img img {
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.experience-slide-img img:hover {
+    transform: scale(1.08); /* Efecto de zoom al pasar el cursor */
+}
+
+.experience-slide-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.experience-slide-text h3 {
+    margin: 20px 0 10px 0;
+    font-size: 32px; /* Aumentar el tamaño del título */
+    color: #222;
+    font-weight: bold;
+}
+
+.experience-slide-text p {
+    font-size: 18px; /* Aumentar el tamaño del texto */
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Botón de voz más grande y visible */
+.btn-voice {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px; /* Aumentar el tamaño del botón */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voice i {
+    font-size: 22px;
+}
+
+.btn-voice:hover {
+    background-color: #0056b3;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 8%; /* Botones más grandes para pantallas táctiles */
+    opacity: 1;
+    position: absolute;
+    top: 65%; /* Cambiar esto al porcentaje necesario para que quede a la altura del texto */
+    transform: translateY(-50%); /* Mantener la alineación vertical */
+}
+
+.carousel-control-next-icon i,
+.carousel-control-prev-icon i {
+    font-size: 35px;
+    color: #007bff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.carousel-control-next-icon:hover i,
+.carousel-control-prev-icon:hover i {
+    color: #0056b3;
+    transform: scale(1.2);
+}
+
+/* Aumentar el tamaño de las flechas para facilitar la navegación */
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    font-size: 35px;
+}
+
+.separator {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+    /* Ajustes para pantallas pequeñas */
+    .experience-slide-text h3 {
+        font-size: 28px;
+    }
+
+    .experience-slide-text p {
+        font-size: 16px;
+    }
+
+    .btn-voice {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 576px) {
+    .carousel-control-next,
+    .carousel-control-prev {
+        top: 70%; /* Ajuste diferente para pantallas más pequeñas */
+    }
+
+    .carousel-control-next-icon i,
+    .carousel-control-prev-icon i {
+        font-size: 30px; /* Ajuste para pantallas pequeñas */
+    }
+}
