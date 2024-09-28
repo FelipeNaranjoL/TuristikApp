@@ -29,6 +29,13 @@ const Form: React.FC = () => {
     const [opinion, setOpinion] = useState<string>('');
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
+    const handleVoiceClick = (e: React.MouseEvent) => {
+        e.preventDefault(); // Evita el comportamiento por defecto del botón
+        e.stopPropagation(); // Detiene la propagación del evento hacia el formulario
+        const container = e.currentTarget.closest('h3') as HTMLElement; // Cambié esto para seleccionar correctamente el contenedor
+        textToSpeak(container); // Llama a la función para hablar el texto
+    };
+
     // Función para manejar el envío del formulario
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
@@ -73,12 +80,20 @@ const Form: React.FC = () => {
         }
     };
 
+
+    // Función para convertir texto a voz
+    const textToSpeak = (container: HTMLElement) => {
+        const utterance = new SpeechSynthesisUtterance();
+        utterance.text = container.textContent || '';
+        window.speechSynthesis.speak(utterance);
+    };
+
     return (
         <form className="contenido" id="encuesta" onSubmit={handleSubmit}>
             <h2>{t('formu.titulo')}</h2>
 
             <h3>{t('formu.pregunta_satisfaccion')}
-                <button className="btn-voice" aria-label="Botón de voz">
+                <button className="btn-voice" aria-label="Botón de voz" onClick={handleVoiceClick}>
                     <i className="fa fa-microphone"></i>
                 </button>
             </h3>
@@ -103,7 +118,11 @@ const Form: React.FC = () => {
                 </div>
             </div>
 
-            <h3>{t('formu.pregunta_amabilidad')}</h3>
+            <h3>{t('formu.pregunta_amabilidad')}
+                <button className="btn-voice" aria-label="Botón de voz" onClick={handleVoiceClick}>
+                    <i className="fa fa-microphone"></i>
+                </button>
+            </h3>
             <div className="container">
                 <div className="radio-tile-group">
                     {[1, 2, 3, 4, 5].map((value) => (
@@ -125,7 +144,11 @@ const Form: React.FC = () => {
                 </div>
             </div>
 
-            <h3>{t('formu.pregunta_camino')}</h3>
+            <h3>{t('formu.pregunta_camino')}
+                <button className="btn-voice" aria-label="Botón de voz" onClick={handleVoiceClick}>
+                    <i className="fa fa-microphone"></i>
+                </button>
+            </h3>
             <div className="container">
                 <div className="radio-tile-group">
                     {[1, 2, 3, 4, 5].map((value) => (
@@ -147,7 +170,11 @@ const Form: React.FC = () => {
                 </div>
             </div>
 
-            <h3>{t('formu.pregunta_recomendacion')}</h3>
+            <h3>{t('formu.pregunta_recomendacion')}
+                <button className="btn-voice" aria-label="Botón de voz" onClick={handleVoiceClick}>
+                    <i className="fa fa-microphone"></i>
+                </button>
+            </h3>
             <div className="container">
                 <div className="radio-tile-group">
                     <div className="input-container">
@@ -182,7 +209,11 @@ const Form: React.FC = () => {
                 </div>
             </div>
 
-            <h3>{t('formu.pregunta_transporte')}</h3>
+            <h3>{t('formu.pregunta_transporte')}
+                <button className="btn-voice" aria-label="Botón de voz" onClick={handleVoiceClick}>
+                    <i className="fa fa-microphone"></i>
+                </button>
+            </h3>
             <div className="container">
                 <div className="radio-tile-group">
                     {[1, 2, 3, 4, 5].map((value) => (
@@ -204,41 +235,52 @@ const Form: React.FC = () => {
                 </div>
             </div>
 
-            <h3>{t('formu.pregunta_costo')}</h3>
+            <h3>{t('formu.pregunta_costo')}
+                <button className="btn-voice" aria-label="Botón de voz" onClick={handleVoiceClick}>
+                    <i className="fa fa-microphone"></i>
+                </button>
+            </h3>
             <div className="container">
                 <div className="radio-tile-group">
                     <div className="input-container">
                         <input
                             type="radio"
                             name="costo"
-                            value="sí"
-                            id="radio-costo-si"
+                            value="si"
+                            id={`radio-costo-si`}
                             onChange={(e) => setCosto(e.target.value)}
                         />
                         <div className="radio-tile">
-                            <label htmlFor="radio-costo-si">
-                                <i className="icono fa-solid fa-thumbs-up"></i>
+                            <label htmlFor={`radio-costo-si`}>
+                                <i className={`icono fa-solid fa-thumbs-up`}></i>
                             </label>
                         </div>
                     </div>
+
                     <div className="input-container">
                         <input
                             type="radio"
                             name="costo"
                             value="no"
-                            id="radio-costo-no"
+                            id={`radio-costo-no`}
                             onChange={(e) => setCosto(e.target.value)}
                         />
                         <div className="radio-tile">
-                            <label htmlFor="radio-costo-no">
-                                <i className="icono fa-solid fa-thumbs-down"></i>
+                            <label htmlFor={`radio-costo-no`}>
+                                <i className={`icono fa-solid fa-thumbs-down`}></i>
                             </label>
                         </div>
                     </div>
+
+
                 </div>
             </div>
 
-            <h3>{t('formu.pregunta_opinion')}</h3>
+            <h3>{t('formu.pregunta_opinion')}
+                <button className="btn-voice" aria-label="Botón de voz" onClick={handleVoiceClick}>
+                    <i className="fa fa-microphone"></i>
+                </button>
+            </h3>
             <textarea
                 name="opinion"
                 placeholder="Escribe aquí tu opinión"

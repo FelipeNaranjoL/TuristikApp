@@ -45,7 +45,7 @@ const Header = () => {
                 </span>
 
                 {/* Dropdown para seleccionar el idioma */}
-                <Dropdown placement="bottom-end" onAction={handleSelect}>
+                <Dropdown placement="bottom-end">
                     <DropdownTrigger>
                         <Avatar
                             as="button"
@@ -54,10 +54,11 @@ const Header = () => {
                             size="xl"
                         />
                     </DropdownTrigger>
-                    <DropdownMenu aria-label="Language Selection">
-                        <DropdownItem key="es" onclick={() => handleLanguageChange('es')}>Español</DropdownItem>
-                        <DropdownItem key="en" onClick={() => handleLanguageChange('en')}>English</DropdownItem>
-                        <DropdownItem key="fr" onClick={() => handleLanguageChange('fr')}>Français</DropdownItem>
+                    {/* Se maneja la selección con onAction en lugar de onSelectionChange */}
+                    <DropdownMenu aria-label="Language Selection" onAction={handleSelect}>
+                        <DropdownItem key="es">Español</DropdownItem>
+                        <DropdownItem key="en">English</DropdownItem>
+                        <DropdownItem key="fr">Français</DropdownItem>
                         <DropdownItem key="pronto" disabled>Pronto</DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
