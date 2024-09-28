@@ -24,7 +24,7 @@ interface TimelineData {
     descripcion2: string;
     descripcion3: string;
     detalle1: string;
-}a
+}
 
 interface TimelineProps {
     data: TimelineData;  // Recibimos los datos desde Firestore como props

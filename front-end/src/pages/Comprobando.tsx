@@ -17,7 +17,7 @@ interface SitioTuristicoData {
     descripcion2: string;
     descripcion3: string;
     detalle1: string;
-}a
+}
 
 const Comprobando: React.FC = () => {
     const { id } = useParams<{ id: string }>();  // Capturar el ID desde la URL

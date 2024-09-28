@@ -17,4 +17,3 @@ const PlantillaBase: React.FC = () => {
 };
 
 export default PlantillaBase;
-aaa
