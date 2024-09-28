@@ -4,4 +4,4 @@ export interface SitioTuristico {
     nombre: string;
     ubicacion: string;
     descripcion: string;
-}
+}a
