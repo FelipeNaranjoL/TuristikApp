@@ -1,0 +1,7 @@
+# back-end/.gitignore
+
+# Ignorar archivo con credenciales
+back-end/src/keyProyecto.json
+
+# Ignorar otros archivos sensibles o directorios si es necesario
+.env
