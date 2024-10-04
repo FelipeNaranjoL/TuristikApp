@@ -7,7 +7,7 @@
 
 /* Estilo principal del carrusel */
 .timeline {
-    padding: 50px 0 50px 0;
+    padding: 50px 0;
     background-color: #f1f1f1; /* Fondo claro y suave */
 }
 
@@ -163,14 +163,48 @@
     font-size: 35px;
 }
 
-.separator {
-    margin-top: 15px;
-    margin-bottom: 15px;
+/* Estilo para los TabPanel */
+.p-tabview-nav {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 10px;
 }
 
+.p-tabview-nav li {
+    flex: 1;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+}
 
+.p-tabview-nav li .p-tabview-title {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.p-tabview-nav li.p-highlight .p-tabview-title {
+    background-color: #0056b3; 
+}
+
+.p-tabview-nav li .p-tabview-title:hover {
+    background-color: #0056b3;
+}
+
+/* Ajustes generales para pantallas pequeñas */
 @media (max-width: 768px) {
-    /* Ajustes para pantallas pequeñas */
+    .p-tabview-nav li .p-tabview-title {
+        font-size: 16px;
+    }
+
     .experience-slide-text h3 {
         font-size: 28px;
     }
@@ -185,15 +219,14 @@
     }
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 576px) {
     .carousel-control-next,
     .carousel-control-prev {
-        top: 70%; /* Ajuste diferente para pantallas más pequeñas */
+        top: 70%;
     }
 
     .carousel-control-next-icon i,
     .carousel-control-prev-icon i {
-        font-size: 30px; /* Ajuste para pantallas pequeñas */
+        font-size: 30px;
     }
 }

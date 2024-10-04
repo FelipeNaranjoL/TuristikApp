@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';  // Para capturar el ID de la URL
 import { getDataById } from '../services/getDataById';  // Importar la función que obtiene datos de Firestore
 import Timeline from '../components/Timeline';  // Importar el componente Timeline
+// import Chat from '../components/chat';
 
 interface SitioTuristicoData {
     nombre: string;
@@ -50,6 +51,7 @@ const Comprobando: React.FC = () => {
         <div>
             {/* Aquí usas el componente Timeline con los datos de la base de datos */}
             <Timeline data={data} />
+            {/* <Chat lugar={data.nombre} /> */}
         </div>
     );
 };

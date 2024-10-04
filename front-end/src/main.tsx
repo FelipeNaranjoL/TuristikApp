@@ -7,6 +7,7 @@ import './index.css';
 import './i18n'; // Importar i18n si lo tienes
 import { PrimeReactProvider } from 'primereact/api';
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <NextUIProvider>
