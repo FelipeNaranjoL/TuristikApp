@@ -1,3 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Importar los estilos base, componentes y utilidades de Tailwind CSS */
+@tailwind base;          /* Importa los estilos base predeterminados de Tailwind CSS */
+@tailwind components;    /* Importa los estilos de componentes predefinidos de Tailwind CSS */
+@tailwind utilities;     /* Importa las clases utilitarias de Tailwind CSS */
+
+/* Estilos personalizados para los componentes "footer" y "header" */
+.footer, .header {
+    /* Aplicar clases de Tailwind CSS de forma programática usando @apply */
+    @apply bg-gray-900 text-white p-4;   /* Fondo gris oscuro, texto blanco y padding de 1rem */
+}
+
+/* Aquí puedes añadir otros estilos globales si los tienes */

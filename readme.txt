@@ -3,45 +3,92 @@ TuristikApp/
 ├── front-end/
 │   ├── node_modules/          # Dependencias de front-end
 │   ├── public/                # Archivos públicos (HTML, etc.)
+│   │   └── images/            # Imágenes utilizadas en la aplicación
 │   ├── src/
 │   │   ├── api/               # Llamadas a APIs externas
-│   │   ├── assets/            # Imágenes, fuentes, etc.
+│   │   ├── assets/            # Archivos estáticos (imágenes, fuentes, etc.)
+│   │   │   └── react.svg      # Icono React utilizado en la interfaz
 │   │   ├── components/        # Componentes reutilizables
+│   │   │   ├── ChatHistory/   # Componente para el historial del chatbot
+│   │   │   │   └── index.tsx  # Lógica para mostrar el historial de chat
+│   │   │   ├── Loading/       # Componente para mostrar el estado de carga
+│   │   │   │   └── index.tsx  # Indicador de carga para el chatbot
+│   │   │   ├── Footer.tsx     # Componente Footer reutilizable
+│   │   │   ├── Form.tsx       # Componente de formulario
+│   │   │   ├── Header.tsx     # Componente Header reutilizable
+│   │   │   ├── Timeline.tsx   # Componente para la visualización del timeline
+│   │   │   └── chat.tsx       # Componente principal del chatbot
 │   │   ├── hooks/             # Custom hooks
-│   │   ├── layouts/           # Componentes de layout
+│   │   │   ├── useChatbotLogic.ts # Lógica del chatbot, interactúa con el API de IA
+│   │   │   └── useLanguage.ts # Lógica para el cambio de idioma
+│   │   ├── locales/           # Archivos de localización
+│   │   │   ├── en/            # Traducciones al inglés
+│   │   │   │   ├── form.json        # Texto para el formulario
+│   │   │   │   └── traslation.json  # Traducción principal
+│   │   │   ├── es/            # Traducciones al español
+│   │   │   │   ├── form.json        # Texto para el formulario
+│   │   │   │   └── traslation.json  # Traducción principal
 │   │   ├── pages/             # Páginas de la aplicación
+│   │   │   ├── Comprobando.tsx        # Página de comprobación de datos
+│   │   │   ├── FormularioSatisfaccion.tsx  # Página del formulario de satisfacción
+│   │   │   └── PlantillaBase.tsx      # Plantilla base para páginas
 │   │   ├── routes/            # Configuración de rutas
+│   │   │   └── getDataById.ts  # Función para obtener datos de Firebase por ID
 │   │   ├── services/          # Lógica de negocio (interactuar con APIs)
+│   │   │   └── getDataById.ts # Servicio para obtener datos desde Firebase
 │   │   ├── styles/            # Archivos CSS o SCSS
-│   │   ├── tests/             # Pruebas unitarias del front-end
+│   │   │   ├── Footer.css     # Estilos del Footer
+│   │   │   ├── Header.css     # Estilos del Header
+│   │   │   ├── PlantillaBase.css # Estilos de la plantilla base
+│   │   │   └── timeline.css   # Estilos del Timeline
+│   │   ├── test/              # Pruebas unitarias del front-end
 │   │   ├── types/             # Tipos TypeScript globales
+│   │   │   └── SitioTuristico.ts  # Definiciones de tipos para Sitios Turísticos
 │   │   ├── utils/             # Funciones de utilidad
-│   │   └── main.tsx           # Archivo principal del front-end
+│   │   │   ├── bbddFirebase.ts      # Conexión a Firebase
+│   │   │   ├── cambiarTamanoFuente.ts  # Función para cambiar el tamaño de la fuente
+│   │   │   └── voice.ts           # Funciones de voz para la app
+│   │   ├── App.tsx              # Componente principal de la aplicación
+│   │   ├── i18n.ts              # Configuración de internacionalización
+│   │   ├── index.css            # Estilos globales
+│   │   ├── main.tsx             # Archivo principal del front-end
+│   │   └── vite-env.d.ts        # Tipos TypeScript para el entorno Vite
 │   ├── .eslintrc.json         # Configuración ESLint
-│   ├── .prettierrc            # Configuración Prettier
 │   ├── jest.config.js         # Configuración Jest
+│   ├── postcss.config.js      # Configuración PostCSS
+│   ├── tailwind.config.js     # Configuración Tailwind CSS
 │   ├── tsconfig.json          # Configuración TypeScript
-│   ├── package.json           # Configuración de dependencias
-│   └── vite.config.ts         # Configuración Vite
+│   ├── tsconfig.app.json      # Configuración TypeScript específica para la aplicación
+│   ├── tsconfig.node.json     # Configuración TypeScript para Node.js
+│   ├── vite.config.ts         # Configuración Vite (bundler utilizado)
+│   └── package.json           # Configuración de dependencias
 │
 └── back-end/
     ├── node_modules/          # Dependencias del back-end
     ├── src/
+    │   ├── config/            # Configuraciones del proyecto
+    │   │   └── firestoreConfig.js # Configuración de Firestore (base de datos)
     │   ├── controllers/       # Controladores que manejan lógica de rutas
-    │   ├── middlewares/       # Middleware para validación, autenticación, etc.
-    │   ├── models/            # Modelos de datos (si utilizas una BD)
+    │   │   └── Controller.js  # Controlador principal para gestionar las operaciones del API
+    │   ├── middlewares/       # Middleware para validaciones, autenticación, etc. (vacío actualmente)
+    │   ├── models/            # Modelos de datos (vacío, se puede utilizar para una BD más estructurada)
     │   ├── routes/            # Rutas principales de la API
-    │   ├── services/          # Lógica de negocio (comunicación con BD, etc.)
+    │   │   └── routes.js      # Definición de rutas que conectan con los controladores
+    │   ├── services/          # Lógica de negocio, comunicación con Firestore
+    │   │   └── firebaseService.js # Interfaz para la comunicación con Firebase Firestore
     │   ├── utils/             # Funciones de utilidad
-    │   ├── config/            # Configuraciones de la app (puertos, BD, etc.)
-    │   ├── app.ts             # Inicialización de la aplicación Express
-    │   └── index.ts           # Punto de entrada principal
+    │   │   ├── app.js         # Inicialización del servidor Express
+    │   │   └── index.ts       # Punto de entrada principal del back-end
     ├── tests/                 # Pruebas unitarias del back-end
-    ├── .eslintrc.json         # Configuración ESLint
-    ├── .prettierrc            # Configuración Prettier
-    ├── jest.config.js         # Configuración Jest
+    │   └── app.test.ts        # Prueba unitaria para la aplicación
+    ├── .eslintrc.json         # Configuración ESLint para el análisis de código
+    ├── jest.config.js         # Configuración Jest para pruebas unitarias
     ├── tsconfig.json          # Configuración TypeScript
-    └── package.json           # Configuración de dependencias
+    ├── package.json           # Configuración de dependencias del back-end
+    ├── package-lock.json      # Control de versiones exactas de las dependencias
+    └── keyProyecto.json       # Credenciales para la conexión a Firebase Firestore (debería estar en .gitignore)
+
+
 
 Comandos para iniciar el front-end y el back-end
 1. Iniciar el front-end (React + Vite + TypeScript)
