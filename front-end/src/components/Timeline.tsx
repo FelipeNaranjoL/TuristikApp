@@ -11,7 +11,7 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import "../styles/timeline.css";
 import Chat from './chat';
 
-interface TimelineData {
+export interface TimelineData {
     nombre: string;
     ubicacion: string;
     descripcion: string;
@@ -25,6 +25,8 @@ interface TimelineData {
     descripcion2: string;
     descripcion3: string;
     detalle1: string;
+    detalle2: string,
+    detalle3: string,
 }
 
 interface TimelineProps {
@@ -43,7 +45,7 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
             <div className="card">
                 <TabView>
                     {/* Primer TabPanel con ícono */}
-                    <TabPanel header="Timeline">
+                    <TabPanel header="Historia">
                         {/* Ícono dentro del contenedor del TabPanel */}
                         <section className="timeline">
                             <div className="container">

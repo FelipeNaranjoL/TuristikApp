@@ -16,12 +16,12 @@ const ChatHistory: React.FC<ChatHistoryProps> = ({ chatHistory }) => {
         <div
           key={index}
           className={`flex items-start py-2 px-4 rounded-lg ${message.type === "user"
-              ? "bg-gray-100 text-gray-800"
-              : "bg-blue-100 text-blue-800"
+            ? "bg-gray-100 text-gray-800"
+            : "bg-blue-100 text-blue-800"
             }`}
         >
           {message.type === "user" && (
-            <span className="mr-2 font-bold text-gray-600">You:</span>
+            <span className="mr-2 font-bold text-gray-600">Tu:</span>
           )}
 
           <div>

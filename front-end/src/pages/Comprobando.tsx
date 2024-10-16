@@ -18,6 +18,9 @@ interface SitioTuristicoData {
     descripcion2: string;
     descripcion3: string;
     detalle1: string;
+    detalle2: string,
+    detalle3: string,
+
 }
 
 const Comprobando: React.FC = () => {

@@ -60,6 +60,25 @@
     color: #ff6f61; /* Color en hover para los iconos sociales */
 }
 
+/* Estilo para los íconos de las apps con separación */
+.app-links .app-icon {
+    display: inline-block;
+    margin-right: 15px; /* Separación entre los iconos */
+    font-size: 24px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.app-links .app-icon:hover {
+    color: #ff6f61; /* Color en hover para los iconos de las apps */
+}
+
+.dialog-content p {
+    margin: 15px; /* Margen de 15px en todas las direcciones */
+}
+
+
 @media (max-width: 768px) {
     .footer-content {
         flex-direction: column;

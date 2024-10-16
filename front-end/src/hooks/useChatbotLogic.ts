@@ -15,7 +15,7 @@ export const useChatbotLogic = (lugar: string) => { // Acepta 'lugar' como argum
     const [isLoading, setIsLoading] = useState<boolean>(false);  // Estado de carga
 
     // Inicializa la API de Gemini con una clave específica
-    const genAI = new GoogleGenerativeAI("AIzaSyCxmhyZ2LqDmuNfx-pbJxUEqO4S9xzrBUo");
+    const genAI = new GoogleGenerativeAI("AIzaSyCNyqsLwbHEUNcyGp8GH-k13oJnxYDK-u4");
     const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
     // Inicializa el chat con un historial vacío
