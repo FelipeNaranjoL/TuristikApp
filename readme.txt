@@ -79,6 +79,7 @@ TuristikApp/
     │   ├── utils/             # Funciones de utilidad
     │   │   ├── app.js         # Inicialización del servidor Express
     │   │   └── index.ts       # Punto de entrada principal del back-end
+    |    └── keyProyecto.json   # Credenciales para la conexión a Firebase Firestore (debería estar en .gitignore)
     ├── tests/                 # Pruebas unitarias del back-end
     │   └── app.test.ts        # Prueba unitaria para la aplicación
     ├── .eslintrc.json         # Configuración ESLint para el análisis de código
@@ -86,7 +87,6 @@ TuristikApp/
     ├── tsconfig.json          # Configuración TypeScript
     ├── package.json           # Configuración de dependencias del back-end
     ├── package-lock.json      # Control de versiones exactas de las dependencias
-    └── keyProyecto.json       # Credenciales para la conexión a Firebase Firestore (debería estar en .gitignore)
 
 
 

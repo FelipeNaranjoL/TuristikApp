@@ -22,7 +22,7 @@ const Header = () => {
     };
 
     return (
-        <Navbar style={{ backgroundColor: 'rgb(253, 96, 96)' }}>
+        <Navbar className="navbar-tour" style={{ backgroundColor: 'rgb(253, 96, 96)' }}>
             <NavbarBrand>
                 <p className="font-bold text-inherit">TuristikApp</p>
             </NavbarBrand>
@@ -30,6 +30,7 @@ const Header = () => {
             <NavbarContent as="div" justify="end">
                 {/* Botón para aumentar el tamaño de la fuente */}
                 <span
+                    className="navbar-tour-mas"
                     onClick={() => handleFontSizeChange(1)}
                     style={{ cursor: 'pointer', marginRight: '15px' }}
                 >
@@ -38,6 +39,7 @@ const Header = () => {
 
                 {/* Botón para reducir el tamaño de la fuente */}
                 <span
+                    className="navbar-tour-menos"
                     onClick={() => handleFontSizeChange(-1)}
                     style={{ cursor: 'pointer', marginRight: '15px' }}
                 >
@@ -46,7 +48,7 @@ const Header = () => {
 
                 {/* Dropdown para seleccionar el idioma */}
                 <Dropdown placement="bottom-end">
-                    <DropdownTrigger>
+                    <DropdownTrigger className="navbar-tour-idiomas">
                         <Avatar
                             as="button"
                             showFallback name='Lang'

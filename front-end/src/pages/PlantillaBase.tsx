@@ -4,8 +4,9 @@ import Timeline, { TimelineData } from '../components/Timeline'; // Asegúrate d
 // Datos de ejemplo que estás pasando a Timeline
 const sampleData: TimelineData = {
     nombre: 'Nombre del sitio turístico',
-    ubicacion: 'Ubicación del sitio',
-    descripcion: 'Una breve descripción del lugar',
+    año1: 'Año de suceso',
+    año2: 'Año de suceso',
+    año3: 'Año de suceso',
     imagen1: 'ruta-de-imagen-1.jpg',
     imagen2: 'ruta-de-imagen-2.jpg',
     imagen3: 'ruta-de-imagen-3.jpg',
