@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';  // Para capturar el ID de la URL
 import { getDataById } from '../services/getDataById';  // Importar la función que obtiene datos de Firestore
 import Timeline from '../components/Timeline';  // Importar el componente Timeline
+import LoaderPage from '../components/loader';
+import NotFound from '../components/notFound';
 
 interface SitioTuristicoData {
     nombre: string;
@@ -43,11 +45,11 @@ const Comprobando: React.FC = () => {
     }, [id]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <LoaderPage />;
     }
 
     if (!data) {
-        return <div>No data found</div>;
+        return <NotFound />;
     }
 
     return (

@@ -290,7 +290,7 @@ const Form: React.FC = () => {
             ></textarea>
 
             <button type="submit" id="btnEnviar" className="enviar" disabled={isSubmitting}>
-                {isSubmitting ? 'Enviando...' : 'Enviar'}
+                {isSubmitting ? t('formu.enviando') : t('formu.enviar')}
             </button>
         </form>
     );

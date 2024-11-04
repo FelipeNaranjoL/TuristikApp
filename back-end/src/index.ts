@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express'; // Importamos express y los tipos Request y Response para tipar los parámetros de las funciones
 
 const app = express();  // Creamos una instancia de la aplicación Express
-const port = 3000;  // Definimos el puerto en el que escuchará la aplicación
+const port = 3001;  // Definimos el puerto en el que escuchará la aplicación
 
 // Definimos una ruta GET para la raíz del servidor
 app.get('/', (req: Request, res: Response) => {

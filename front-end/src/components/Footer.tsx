@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
                             <i className="pi pi-instagram"></i>
                         </a>
                     </div>
-                    <div className="footer-section app-links">
+                    <div className="footer-section app-links" id="download-section">
                         <h4>Descarga nuestra app oficial</h4>
                         <a href="https://play.google.com/store/apps/details?id=com.globalguidesystems.tracker.tuc&hl=es_CL" aria-label="Android" className="app-icon">
                             <i className="pi pi-android"></i> Android
