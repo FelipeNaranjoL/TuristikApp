@@ -1,5 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+import { DatoFirestore } from '../types/types'; // Importa la interfaz
 
 // Configuración de Firebase (se reemplaza API_KEY con el valor correcto)
 const firebaseConfig = {
@@ -38,3 +39,13 @@ export const saveOpinion = async (data: OpinionData): Promise<void> => {
         throw error;
     }
 };
+
+export async function getDatosDesdeFirestore(): Promise<DatoFirestore[]> {
+    const db = getFirestore();
+    const querySnapshot = await getDocs(collection(db, "opiniones"));
+    const datos = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...(doc.data() as Omit<DatoFirestore, 'id'>) // Usa el operador `as` para convertir el tipo
+    }));
+    return datos;
+}
