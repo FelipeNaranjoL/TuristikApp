@@ -166,6 +166,9 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                                                             <Button label="Más información" icon="pi pi-external-link" onClick={() => setActiveDetail('detalle1')} />
                                                             <Dialog header="Más información" visible={activeDetail === 'detalle1'} style={{ width: '50vw' }} onHide={() => setActiveDetail(null)}>
                                                                 <p className="mb-5">{data.detalle1}</p>
+                                                                <button className="btn-voice">
+                                                                    <i className="pi pi-microphone"></i>
+                                                                </button>
                                                             </Dialog>
                                                         </div>
 
@@ -196,6 +199,9 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                                                             <Button label="Más información" icon="pi pi-external-link" onClick={() => setActiveDetail('detalle2')} />
                                                             <Dialog header="Más información" visible={activeDetail === 'detalle2'} style={{ width: '50vw' }} onHide={() => setActiveDetail(null)}>
                                                                 <p className="mb-5">{data.detalle2}</p>
+                                                                <button className="btn-voice">
+                                                                    <i className="pi pi-microphone"></i>
+                                                                </button>
                                                             </Dialog>
                                                         </div>
 
@@ -226,6 +232,9 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                                                             <Button label="Más información" icon="pi pi-external-link" onClick={() => setActiveDetail('detalle3')} />
                                                             <Dialog header="Más información" visible={activeDetail === 'detalle3'} style={{ width: '50vw' }} onHide={() => setActiveDetail(null)}>
                                                                 <p className="mb-5">{data.detalle3}</p>
+                                                                <button className="btn-voice">
+                                                                    <i className="pi pi-microphone"></i>
+                                                                </button>
                                                             </Dialog>
                                                         </div>
 

@@ -40,6 +40,30 @@ export const saveOpinion = async (data: OpinionData): Promise<void> => {
     }
 };
 
+// Define un tipo para los datos del error
+interface ErrorReportData {
+    TourId: string;
+    tipoError: string;
+    fecha: string;
+}
+
+// Función para guardar un reporte de error en la colección "Errores"
+export const saveError = async (errorData: ErrorReportData): Promise<void> => {
+    try {
+        // Referencia a la colección "Errores"
+        const erroresRef = collection(db, 'Errores');
+
+        // Agrega un nuevo documento a la colección con los datos proporcionados
+        await addDoc(erroresRef, errorData);
+
+        console.log('Reporte de error guardado exitosamente');
+    } catch (error) {
+        console.error('Error al guardar el reporte de error:', error);
+        throw error; // Propaga el error para manejarlo en el componente
+    }
+};
+
+// Función para obtener datos desde Firestore
 export async function getDatosDesdeFirestore(): Promise<DatoFirestore[]> {
     const db = getFirestore();
     const querySnapshot = await getDocs(collection(db, "opiniones"));

@@ -6,7 +6,7 @@ import TokenRequerido from './pages/TokenRequerido';
 import Header from './components/Header'; // Importa el componente de cabecera (Header) global
 import Footer from './components/Footer'; // Importa el componente de pie de página (Footer) opcional
 import ExportarDatos from './pages/ExportarDatos';
-
+import FormError from './pages/FormError';
 const App: React.FC = () => {
   return (
     <Router>
@@ -17,6 +17,7 @@ const App: React.FC = () => {
         <Route path=":id" element={<Comprobando />} />
         <Route path="/" element={<TokenRequerido />} /> {/* Nueva ruta raíz */}
         <Route path="/exportar-datos" element={<ExportarDatos />} />
+        <Route path="/error" element={<FormError />} />
       </Routes>
       <Footer /> {/* Incluye el pie de página opcional en todas las páginas */}
     </Router>
