@@ -9,3 +9,11 @@ export interface DatoFirestore {
     camino: string;
     costo: string;
 }
+
+export interface DatoErrorFirestore {
+    id: string;
+    TourId: string;
+    tipoError: string;
+    fecha: string;
+    nombre: string;
+}

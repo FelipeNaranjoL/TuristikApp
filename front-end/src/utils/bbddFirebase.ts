@@ -45,6 +45,12 @@ interface ErrorReportData {
     TourId: string;
     tipoError: string;
     fecha: string;
+    nombre: string; // Añadir la propiedad "nombre"
+}
+
+// Define un tipo que represente los datos de Firestore, incluyendo el ID
+export interface DatoErrorFirestore extends ErrorReportData {
+    id: string;
 }
 
 // Función para guardar un reporte de error en la colección "Errores"
@@ -70,6 +76,16 @@ export async function getDatosDesdeFirestore(): Promise<DatoFirestore[]> {
     const datos = querySnapshot.docs.map(doc => ({
         id: doc.id,
         ...(doc.data() as Omit<DatoFirestore, 'id'>) // Usa el operador `as` para convertir el tipo
+    }));
+    return datos;
+}
+
+// Función para obtener datos de la colección "Errores" y asegurar que el id esté incluido
+export async function getDatosErroresDesdeFirestore(): Promise<DatoErrorFirestore[]> {
+    const querySnapshot = await getDocs(collection(db, "Errores"));
+    const datos = querySnapshot.docs.map(doc => ({
+        id: doc.id,  // Añadir el id del documento
+        ...(doc.data() as Omit<DatoErrorFirestore, 'id'>) // Asumir que los datos tienen el resto de las propiedades
     }));
     return datos;
 }

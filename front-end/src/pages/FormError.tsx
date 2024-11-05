@@ -10,12 +10,38 @@ interface ErrorReportData {
     TourId: string;
     tipoError: string;
     fecha: string;
+    nombre: string;
 }
 
 const FormError: React.FC = () => {
     // Estado para capturar el tipo de error
     const [tipoError, setTipoError] = useState<string>(''); // Tipo de error
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+
+    // Lista de nombres de sitios turísticos en Chile
+    const sitiosTuristicos = [
+        "Parque Nacional Torres del Paine",
+        "Desierto de Atacama",
+        "Isla de Pascua",
+        "Valle de la Luna",
+        "Lago Llanquihue",
+        "Puerto Varas",
+        "San Pedro de Atacama",
+        "Viña del Mar",
+        "Valparaíso",
+        "Parque Nacional Vicente Pérez Rosales",
+        "Glaciar San Rafael",
+        "Isla Chiloé",
+        "Valle del Elqui",
+        "Parque Nacional Conguillío",
+        "Reserva Nacional Los Flamencos"
+    ];
+
+    // Función para seleccionar un sitio turístico aleatorio
+    const generarNombreAleatorio = () => {
+        const randomIndex = Math.floor(Math.random() * sitiosTuristicos.length);
+        return sitiosTuristicos[randomIndex];
+    };
 
     // Función para generar un ID aleatorio entre 1 y 45
     const generarTourId = () => {
@@ -34,7 +60,8 @@ const FormError: React.FC = () => {
             const errorData: ErrorReportData = {
                 TourId: generarTourId().toString(), // Genera un TourId aleatorio
                 tipoError,
-                fecha: fechaFormateada
+                fecha: fechaFormateada,
+                nombre: generarNombreAleatorio() // Genera un nombre de sitio turístico aleatorio
             };
 
             setIsSubmitting(true);
