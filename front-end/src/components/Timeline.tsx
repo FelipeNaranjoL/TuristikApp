@@ -38,13 +38,62 @@ interface TimelineProps {
 }
 
 const Timeline: React.FC<TimelineProps> = ({ data }) => {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [stepsEnabled, setStepsEnabled] = useState(false);
     const [activeDetail, setActiveDetail] = useState<string | null>(null);
 
     useEffect(() => {
         initializeVoice();
     }, []);
+
+    const steps = [
+        {
+            element: '.navbar-tour',
+            intro: t('plantilla.navbar_info'),
+            position: 'bottom'
+        },
+        {
+            element: '.navbar-tour-mas',
+            intro: t('plantilla.aumentar_tamano_letra'),
+            position: 'bottom'
+        },
+        {
+            element: '.navbar-tour-menos',
+            intro: t('plantilla.disminuir_tamano_letra'),
+            position: 'bottom'
+        },
+        {
+            element: '.navbar-tour-idiomas',
+            intro: t('plantilla.seleccionar_idioma'),
+            position: 'bottom'
+        },
+        {
+            element: '.timeline-tabs-historia',
+            intro: t('plantilla.informacion_sitio_turistico'),
+            position: 'bottom'
+        },
+        {
+            element: '.timeline-tabs-ia',
+            intro: t('plantilla.consulta_ia'),
+            position: 'bottom'
+        },
+        {
+            element: '.carousel',
+            intro: t('plantilla.carrusel_tour'),
+            position: 'bottom'
+        },
+        {
+            element: '.btn-voice',
+            intro: t('plantilla.boton_voz'),
+            position: 'right'
+        },
+        {
+            element: '.footer',
+            intro: t('plantilla.contacto_footer'),
+            position: 'right'
+        }
+    ];
+
 
     // Función para obtener el valor correcto basado en el idioma
     const getLocalizedField = (fieldBaseName: keyof TimelineData) => {
@@ -56,20 +105,17 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
     return (
         <>
             <div className="card">
-                <Button label="Iniciar tutorial" onClick={() => setStepsEnabled(true)} className="p-button-info mb-3" />
+                <Button label={t('plantilla.iniciar_tutorial')} onClick={() => setStepsEnabled(true)} className="p-button-info mb-3" />
 
                 <Steps
                     enabled={stepsEnabled}
-                    steps={[
-                        { element: '.navbar-tour', intro: 'Esta barra...', position: 'bottom' },
-                        { element: '.navbar-tour-mas', intro: 'Si presiona este signo...', position: 'bottom' },
-                    ]}
+                    steps={steps}
                     initialStep={0}
                     onExit={() => setStepsEnabled(false)}
                 />
 
                 <TabView>
-                    <TabPanel className='timeline-tabs-historia' header="Historia">
+                    <TabPanel className='timeline-tabs-historia' header={t('plantilla.historia')}>
                         <section className="timeline">
                             <div className="container">
                                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
@@ -101,8 +147,8 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                                                         <h3>{getLocalizedField('titulo1')}</h3>
                                                         <p>{getLocalizedField('descripcion1')}</p>
                                                         <div className="card flex justify-content-center">
-                                                            <Button label="Más información" icon="pi pi-external-link" onClick={() => setActiveDetail('detalle1')} />
-                                                            <Dialog header="Más información" visible={activeDetail === 'detalle1'} style={{ width: '50vw' }} onHide={() => setActiveDetail(null)}>
+                                                            <Button label={t('plantilla.mas_informacion')} icon="pi pi-external-link" onClick={() => setActiveDetail('detalle1')} />
+                                                            <Dialog header={t('plantilla.mas_informacion')} visible={activeDetail === 'detalle1'} style={{ width: '50vw' }} onHide={() => setActiveDetail(null)}>
                                                                 <p className="mb-5">{getLocalizedField('detalle1')}</p>
                                                                 <button className="btn-voice">
                                                                     <i className="pi pi-microphone"></i>
@@ -185,7 +231,7 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                         </section>
                     </TabPanel>
 
-                    <TabPanel className='timeline-tabs-ia' header="Información adicional">
+                    <TabPanel className='timeline-tabs-ia' header={t('plantilla.informacion_adicional')}>
                         <Chat lugar={getLocalizedField('nombre')} />
                     </TabPanel>
                 </TabView>

@@ -1,0 +1,16 @@
+{
+    "iniciar_tutorial": "Iniciar Tutorial",
+    "navbar_info": "Esta barra de navegación le permitira realizar acciones como modificar el lenguaje y alterar la fuente del texto en pantalla.",
+    "aumentar_tamano_letra": "Si presiona este signo, aumentara el tamaño de la letra.",
+    "disminuir_tamano_letra": "Si presiona este signo, disminuira el tamaño de la letra.",
+    "seleccionar_idioma": "Aqui se abrira un listado de idiomas, eliga el de su preferencia y el contenido pasara a ese idioma.",
+    "informacion_sitio_turistico": "Aqui se mostrara la información acerca del sitio turistico.",
+    "consulta_ia": "Aqui podra realizar consultas turisticas a nuestra inteligencia artificial.",
+    "carrusel_tour": "Este es el carrusel donde puedes ver las imágenes y descripciones del tour.",
+    "boton_voz": "Presiona este botón para escuchar la descripción del tour.",
+    "contacto_footer": "En caso de dudas, puedes contactarnos por estas vias.",
+    "historia": "Historia",
+    "mas_informacion": "Mas información",
+    "informacion_adicional": "Informacion adicional"
+    
+}

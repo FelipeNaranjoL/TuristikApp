@@ -1,0 +1,17 @@
+{
+    "formTitle": "Formulario de Reporte de Errores",
+    "typeErrorLabel": "Tipo de Error",
+    "selectPlaceholder": "Selecciona el tipo de error",
+    "errorVisual": "Error Visual",
+    "error404": "Error 404",
+    "errorInfiniteLoad": "Error de carga infinita",
+    "errorOther": "Otro",
+    "submitButtonSending": "Enviando...",
+    "submitButton": "Enviar Reporte",
+    "successTitle": "¡Gracias!",
+    "successMessage": "Tu reporte de error ha sido enviado correctamente.",
+    "errorTitle": "Error",
+    "errorMessage": "Hubo un problema al enviar el reporte. Intenta de nuevo.",
+    "warningTitle": "Advertencia",
+    "warningMessage": "Por favor, completa todos los campos"
+  }

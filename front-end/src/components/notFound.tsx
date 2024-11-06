@@ -1,7 +1,9 @@
 import { AlertCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const NotFound = () => {
+    const { t } = useTranslation(); // Hook para traducción
     const navigate = useNavigate(); // Hook para redirigir
 
     return (
@@ -14,16 +16,16 @@ const NotFound = () => {
                 </div>
 
                 {/* Número de error */}
-                <div className="text-red-500 text-8xl font-bold">404</div>
+                <div className="text-red-500 text-8xl font-bold">{t("notFound.errorNumber")}</div>
 
                 {/* Mensaje de error */}
                 <h2 className="text-2xl font-semibold text-red-700">
-                    Página no encontrada
+                    {t("notFound.errorMessage")}
                 </h2>
 
                 {/* Descripción del error */}
                 <p className="text-red-600">
-                    Lo sentimos, la página que estás buscando no existe o ha sido movida.
+                    {t("notFound.errorDescription")}
                 </p>
 
                 {/* Botón para volver atrás */}
@@ -31,7 +33,7 @@ const NotFound = () => {
                     onClick={() => window.history.back()}
                     className="mt-6 px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
                 >
-                    Volver atrás
+                    {t("notFound.backButton")}
                 </button>
 
                 {/* Botón para reportar problema */}
@@ -39,7 +41,7 @@ const NotFound = () => {
                     onClick={() => navigate('/error')} // Redirige a la página de reporte de error
                     className="mt-6 px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
                 >
-                    Reportar problema
+                    {t("notFound.reportButton")}
                 </button>
             </div>
         </div>

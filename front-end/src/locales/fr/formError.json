@@ -1,0 +1,17 @@
+{
+  "formTitle": "Formulaire de Rapport d'Erreur",
+  "typeErrorLabel": "Type d'Erreur",
+  "selectPlaceholder": "Sélectionnez le type d'erreur",
+  "errorVisual": "Erreur Visuelle",
+  "error404": "Erreur 404",
+  "errorInfiniteLoad": "Erreur de Chargement Infini",
+  "errorOther": "Autre",
+  "submitButtonSending": "Envoi...",
+  "submitButton": "Soumettre le Rapport",
+  "successTitle": "Merci !",
+  "successMessage": "Votre rapport d'erreur a été envoyé avec succès.",
+  "errorTitle": "Erreur",
+  "errorMessage": "Un problème est survenu lors de l'envoi du rapport. Veuillez réessayer.",
+  "warningTitle": "Avertissement",
+  "warningMessage": "Veuillez compléter tous les champs"
+}

@@ -1,33 +1,79 @@
-import i18next from 'i18next'; // Importa la librería i18next para manejar internacionalización
-import { initReactI18next } from 'react-i18next'; // Importa el adaptador de i18next para React
+import i18next from 'i18next';
+import { initReactI18next } from 'react-i18next';
 
-// Importa los archivos de traducción para los idiomas soportados
-import es from '../src/locales/es/traslation.json';
-import es_form from '../src/locales/es/form.json';
-import en from '../src/locales/en/traslation.json';
-import en_form from '../src/locales/en/form.json';
+// Cargar archivos de traducción manualmente
+import esPlantilla from '../src/locales/es/plantilla.json';
+import esForm from '../src/locales/es/form.json';
+import esChatBot from '../src/locales/es/chatbot.json';
+import esUiChat from '../src/locales/es/chatHistory.json';
+import esfooter from '../src/locales/es/footer.json';
+import esNotFound from '../src/locales/es/notFound.json';
+import esformError from '../src/locales/es/formError.json';
+import esToken from '../src/locales/es/token.json';
+import enPlantilla from '../src/locales/en/plantilla.json';
+import enForm from '../src/locales/en/form.json';
+import enChatBot from '../src/locales/en/chatbot.json';
+import enUiChat from '../src/locales/en/chatHistory.json';
+import enfooter from '../src/locales/en/footer.json';
+import enNotFound from '../src/locales/en/notFound.json';
+import enformError from '../src/locales/en/formError.json';
+import enToken from '../src/locales/en/token.json';
+import frPlantilla from '../src/locales/fr/plantilla.json';
+import frForm from '../src/locales/fr/form.json';
+import frChatBot from '../src/locales/fr/chatbot.json';
+import frUiChat from '../src/locales/fr/chatHistory.json';
+import frfooter from '../src/locales/fr/footer.json';
+import frNotFound from '../src/locales/fr/notFound.json';
+import frformError from '../src/locales/fr/formError.json';
+import frToken from '../src/locales/fr/token.json';
 
-// Inicializa i18next con la configuración de idiomas
-i18next.use(initReactI18next).init({
-    lng: 'es', // Establece el idioma inicial (en este caso, español)
-    fallbackLng: 'en', // Idioma de respaldo si no existe traducción en el idioma seleccionado
-    resources: {
-        es: {
-            translation: {
-                plantilla: es, // Asigna el archivo de traducción de la plantilla en español
-                formu: es_form // Asigna el archivo de traducción de formularios en español
-            }
-        },
-        en: {
-            translation: {
-                plantilla: en, // Asigna el archivo de traducción de la plantilla en inglés
-                formu: en_form // Asigna el archivo de traducción de formularios en inglés
-            }
+// Construimos el objeto de recursos manualmente
+const resources = {
+    es: {
+        translation: {
+            plantilla: esPlantilla,
+            formu: esForm,
+            chatBot: esChatBot,
+            uiChatBot: esUiChat,
+            footer: esfooter,
+            notFound: esNotFound,
+            formError: esformError,
+            tokenRequired: esToken,
         }
     },
-    interpolation: {
-        escapeValue: false // Evita escapar los valores interpolados porque React ya lo hace de manera segura
+    en: {
+        translation: {
+            plantilla: enPlantilla,
+            formu: enForm,
+            chatBot: enChatBot,
+            uiChatBot: enUiChat,
+            footer: enfooter,
+            notFound: enNotFound,
+            formError: enformError,
+            tokenRequired: enToken,
+        }
+    },
+    fr: {
+        translation: {
+            plantilla: frPlantilla,
+            formu: frForm,
+            chatBot: frChatBot,
+            uiChatBot: frUiChat,
+            footer: frfooter,
+            notFound: frNotFound,
+            formError: frformError,
+            tokenRequired: frToken,
+        }
     }
+};
+
+i18next.use(initReactI18next).init({
+    lng: 'es', // Idioma inicial
+    fallbackLng: 'en', // Idioma de respaldo
+    resources, // Carga de recursos de traducción
+    interpolation: {
+        escapeValue: false, // React maneja la seguridad de valores interpolados
+    },
 });
 
-export default i18next; // Exporta la configuración de i18next
+export default i18next;

@@ -1,14 +1,17 @@
-// src/pages/TokenRequerido.tsx
 import React from 'react';
 import { AlertCircle } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const TokenRequerido: React.FC = () => {
+    const { t } = useTranslation();
+
     const handleScrollToDownload = () => {
         const downloadSection = document.getElementById('download-section');
         if (downloadSection) {
             downloadSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
     return (
         <div className="min-h-screen bg-white flex flex-col items-center justify-center p-4">
             {/* Error Container */}
@@ -19,27 +22,26 @@ const TokenRequerido: React.FC = () => {
                 </div>
 
                 {/* Restricted Access Message */}
-                <div className="text-red-500 font-bold">No posees un token</div>
+                <div className="text-red-500 font-bold">{t("tokenRequired.noTokenMessage")}</div>
 
                 {/* Access Denied Heading */}
                 <h2 className="text-2xl font-semibold text-red-700">
-                    Acceso Restringido
+                    {t("tokenRequired.restrictedAccess")}
                 </h2>
 
                 {/* Access Denied Description */}
                 <p className="text-red-600">
-                    Para acceder a esta sección, necesitas solicitar un token de verificación en nuestra app oficial.
+                    {t("tokenRequired.accessDescription")}
                 </p>
 
-                {/* Back Button */}
+                {/* Guide Button */}
                 <button
                     onClick={handleScrollToDownload}
                     className="mt-6 px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors duration-200"
                 >
-                    Guiame
+                    {t("tokenRequired.guideButton")}
                 </button>
             </div>
-
         </div>
     );
 };

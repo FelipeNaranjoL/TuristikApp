@@ -1,0 +1,7 @@
+{
+    "errorNumber": "404",
+    "errorMessage": "Página no encontrada",
+    "errorDescription": "Lo sentimos, la página que estás buscando no existe o ha sido movida.",
+    "backButton": "Volver atrás",
+    "reportButton": "Reportar problema"
+}

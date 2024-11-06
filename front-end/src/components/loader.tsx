@@ -31,7 +31,6 @@ const LoaderPage = () => {
                 {/* Loading Text */}
                 <div className="space-y-2">
                     <h2 className="text-2xl font-semibold text-red-700">
-                        Cargando
                     </h2>
                     <div className="flex justify-center space-x-1">
                         <div className="w-2 h-2 bg-red-500 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
@@ -42,7 +41,6 @@ const LoaderPage = () => {
 
                 {/* Optional Loading Message */}
                 <p className="text-red-600 max-w-md mx-auto">
-                    Por favor espera mientras cargamos el contenido...
                 </p>
             </div>
         </div>

@@ -1,9 +1,9 @@
-// src/pages/FormError.tsx
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import React, { useState } from 'react';
-import { saveError } from "../utils/bbddFirebase";  // Asegúrate de que esta función esté configurada para guardar en Firestore
+import { saveError } from "../utils/bbddFirebase";
 import Swal from 'sweetalert2';
+import { useTranslation } from 'react-i18next';
 
 // Interfaz para los datos del formulario de error
 interface ErrorReportData {
@@ -14,11 +14,10 @@ interface ErrorReportData {
 }
 
 const FormError: React.FC = () => {
-    // Estado para capturar el tipo de error
-    const [tipoError, setTipoError] = useState<string>(''); // Tipo de error
+    const { t } = useTranslation();
+    const [tipoError, setTipoError] = useState<string>('');
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
-    // Lista de nombres de sitios turísticos en Chile
     const sitiosTuristicos = [
         "Parque Nacional Torres del Paine",
         "Desierto de Atacama",
@@ -37,49 +36,44 @@ const FormError: React.FC = () => {
         "Reserva Nacional Los Flamencos"
     ];
 
-    // Función para seleccionar un sitio turístico aleatorio
     const generarNombreAleatorio = () => {
         const randomIndex = Math.floor(Math.random() * sitiosTuristicos.length);
         return sitiosTuristicos[randomIndex];
     };
 
-    // Función para generar un ID aleatorio entre 1 y 45
     const generarTourId = () => {
         return Math.floor(Math.random() * 45) + 1;
     };
 
-    // Función para manejar el envío del formulario
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
-        // Generar la fecha en formato día/mes/año
         const fechaActual = new Date();
         const fechaFormateada = `${fechaActual.getDate()}/${fechaActual.getMonth() + 1}/${fechaActual.getFullYear()}`;
 
         if (tipoError) {
             const errorData: ErrorReportData = {
-                TourId: generarTourId().toString(), // Genera un TourId aleatorio
+                TourId: generarTourId().toString(),
                 tipoError,
                 fecha: fechaFormateada,
-                nombre: generarNombreAleatorio() // Genera un nombre de sitio turístico aleatorio
+                nombre: generarNombreAleatorio()
             };
 
             setIsSubmitting(true);
 
             try {
-                await saveError(errorData); // Guardar el reporte en Firestore
+                await saveError(errorData);
                 Swal.fire({
-                    title: '¡Gracias!',
-                    text: 'Tu reporte de error ha sido enviado correctamente.',
+                    title: t("formError.successTitle"),
+                    text: t("formError.successMessage"),
                     icon: 'success'
                 });
-                // Resetear el formulario después de enviar
                 setTipoError('');
             } catch (error) {
                 console.error('Error al enviar el reporte:', error);
                 Swal.fire({
-                    title: 'Error',
-                    text: 'Hubo un problema al enviar el reporte. Intenta de nuevo.',
+                    title: t("formError.errorTitle"),
+                    text: t("formError.errorMessage"),
                     icon: 'error'
                 });
             }
@@ -87,8 +81,8 @@ const FormError: React.FC = () => {
             setIsSubmitting(false);
         } else {
             Swal.fire({
-                title: 'Advertencia',
-                text: 'Por favor, completa todos los campos',
+                title: t("formError.warningTitle"),
+                text: t("formError.warningMessage"),
                 icon: 'warning'
             });
         }
@@ -96,10 +90,10 @@ const FormError: React.FC = () => {
 
     return (
         <form className="contenido" id="formError" onSubmit={handleSubmit}>
-            <h2>Formulario de Reporte de Errores</h2>
+            <h2>{t("formError.formTitle")}</h2>
 
             <div className="mb-3">
-                <label htmlFor="tipoError" className="form-label">Tipo de Error</label>
+                <label htmlFor="tipoError" className="form-label">{t("formError.typeErrorLabel")}</label>
                 <select
                     id="tipoError"
                     className="form-select"
@@ -107,16 +101,16 @@ const FormError: React.FC = () => {
                     onChange={(e) => setTipoError(e.target.value)}
                     required
                 >
-                    <option value="">Selecciona el tipo de error</option>
-                    <option value="Error Visual">Error Visual</option>
-                    <option value="Error 404">Error 404</option>
-                    <option value="Error carga infinita">Error de carga infinita</option>
-                    <option value="Otro">Otro</option>
+                    <option value="">{t("formError.selectPlaceholder")}</option>
+                    <option value="Error Visual">{t("formError.errorVisual")}</option>
+                    <option value="Error 404">{t("formError.error404")}</option>
+                    <option value="Error carga infinita">{t("formError.errorInfiniteLoad")}</option>
+                    <option value="Otro">{t("formError.errorOther")}</option>
                 </select>
             </div>
 
             <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-                {isSubmitting ? 'Enviando...' : 'Enviar Reporte'}
+                {isSubmitting ? t("formError.submitButtonSending") : t("formError.submitButton")}
             </button>
         </form>
     );

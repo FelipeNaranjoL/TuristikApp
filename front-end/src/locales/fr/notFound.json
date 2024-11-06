@@ -1,0 +1,7 @@
+{
+    "errorNumber": "404",
+    "errorMessage": "Page non trouvée",
+    "errorDescription": "Désolé, la page que vous recherchez n'existe pas ou a été déplacée.",
+    "backButton": "Retourner en arrière",
+    "reportButton": "Signaler un problème"
+}

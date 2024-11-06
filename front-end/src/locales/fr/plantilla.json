@@ -1,0 +1,15 @@
+{
+    "iniciar_tutorial": "Démarrer le tutoriel",
+    "navbar_info": "Cette barre de navigation vous permet de modifier la langue et de changer la police du texte à l'écran.",
+    "aumentar_tamano_letra": "Si vous appuyez sur cette icône, la taille de la police augmentera.",
+    "disminuir_tamano_letra": "Si vous appuyez sur cette icône, la taille de la police diminuera.",
+    "seleccionar_idioma": "Ici, une liste de langues s'affichera ; choisissez celle de votre préférence, et le contenu passera dans cette langue.",
+    "informacion_sitio_turistico": "Ici, les informations sur le site touristique seront affichées.",
+    "consulta_ia": "Ici, vous pouvez poser des questions touristiques à notre intelligence artificielle.",
+    "carrusel_tour": "Ceci est le carrousel où vous pouvez voir les images et descriptions de la visite.",
+    "boton_voz": "Appuyez sur ce bouton pour écouter la description de la visite.",
+    "contacto_footer": "En cas de questions, vous pouvez nous contacter par ces moyens.",
+    "historia": "Histoire",
+    "mas_informacion": "Plus d'informations",
+    "informacion_adicional": "Informations supplémentaires"
+}

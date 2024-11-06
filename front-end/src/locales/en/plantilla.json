@@ -1,0 +1,15 @@
+{
+    "iniciar_tutorial": "Start Tutorial",
+    "navbar_info": "This navigation bar will allow you to perform actions such as changing the language and adjusting the text font on the screen.",
+    "aumentar_tamano_letra": "If you press this icon, the font size will increase.",
+    "disminuir_tamano_letra": "If you press this icon, the font size will decrease.",
+    "seleccionar_idioma": "Here, a list of languages will open; choose your preferred one, and the content will switch to that language.",
+    "informacion_sitio_turistico": "Here, information about the tourist site will be displayed.",
+    "consulta_ia": "Here, you can make tourism-related inquiries to our artificial intelligence.",
+    "carrusel_tour": "This is the carousel where you can view images and descriptions of the tour.",
+    "boton_voz": "Press this button to hear the tour description.",
+    "contacto_footer": "If you have any questions, you can contact us through these channels.",
+    "historia": "History",
+    "mas_informacion": "More information",
+    "informacion_adicional": "Additional information"
+}

@@ -1,6 +1,6 @@
 {
     "titulo": "Encuesta de Satisfacción",
-    "pregunta_satisfaccion": "En una escala del 1 al 5, ¿cómo fue el tour?",
+    "pregunta_satisfaccion": "En una escala del uno al cinco, ¿cómo fue el tour?",
     "pregunta_amabilidad": "¿Cómo fue la amabilidad del guía?",
     "pregunta_camino": "¿Cómo fue la ruta durante el tour?",
     "pregunta_recomendacion": "¿Recomendarías este tour a otros?",
@@ -8,5 +8,12 @@
     "pregunta_costo": "¿Cómo calificarías el costo del tour?",
     "pregunta_opinion": "¿En qué áreas crees que podríamos mejorar?",
     "enviar": "Enviar",
-    "enviando": "Enviando..."
+    "enviando": "Enviando...",
+    "buen_trabajo": "¡Buen trabajo!",
+    "opinion_enviada": "¡La opinión se ha enviado correctamente!",
+    "error": "Error",
+    "problema_opinion": "Hubo un problema al enviar la opinión. Intenta de nuevo.",
+    "advertencia": "Advertencia",
+    "completar_campos": "Por favor, completa todos los campos",
+    "escribe_opinion": "Escribe aquí tu opinión"
 }

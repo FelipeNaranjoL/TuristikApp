@@ -1,0 +1,19 @@
+{
+    "titulo": "Enquête de Satisfaction",
+    "pregunta_satisfaccion": "Sur une échelle de un à cinq, comment avez-vous trouvé le tour ?",
+    "pregunta_amabilidad": "Comment était l'amabilité du guide ?",
+    "pregunta_camino": "Comment était l'itinéraire pendant le tour ?",
+    "pregunta_recomendacion": "Recommanderiez-vous ce tour à d'autres ?",
+    "pregunta_transporte": "Comment s'est passée votre expérience avec le transport ?",
+    "pregunta_costo": "Comment évalueriez-vous le coût du tour ?",
+    "pregunta_opinion": "Dans quels domaines pensez-vous que nous pourrions nous améliorer ?",
+    "enviar": "Envoyer",
+    "enviando": "Envoi en cours...",
+    "buen_trabajo": "Bon travail !",
+    "opinion_enviada": "Votre avis a été envoyé avec succès !",
+    "error": "Erreur",
+    "problema_opinion": "Il y a eu un problème lors de l'envoi de l'avis. Veuillez réessayer.",
+    "advertencia": "Avertissement",
+    "completar_campos": "Veuillez remplir tous les champs",
+    "escribe_opinion": "Écrivez votre avis ici"
+}

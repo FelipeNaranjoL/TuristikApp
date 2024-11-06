@@ -57,15 +57,15 @@ const Form: React.FC = () => {
             try {
                 await saveOpinion(formData);
                 Swal.fire({
-                    title: '¡Buen trabajo!',
-                    text: '¡La opinión se ha enviado correctamente!',
+                    title: t('formu.buen_trabajo'), // Título de éxito traducido
+                    text: t('formu.opinion_enviada'), // Texto de éxito traducido
                     icon: 'success'
                 });
             } catch (error) {
                 console.error('Error al guardar la opinión:', error);
                 Swal.fire({
-                    title: 'Error',
-                    text: 'Hubo un problema al enviar la opinión. Intenta de nuevo.',
+                    title: t('formu.error'), // Título de error traducido
+                    text: t('formu.problema_opinion'), // Texto de error traducido
                     icon: 'error'
                 });
             }
@@ -73,8 +73,8 @@ const Form: React.FC = () => {
             setIsSubmitting(false);
         } else {
             Swal.fire({
-                title: 'Advertencia',
-                text: 'Por favor, completa todos los campos',
+                title: t('formu.advertencia'), // Título de advertencia traducido
+                text: t('formu.completar_campos'), // Texto de advertencia traducido
                 icon: 'warning'
             });
         }
@@ -283,7 +283,7 @@ const Form: React.FC = () => {
             </h3>
             <textarea
                 name="opinion"
-                placeholder="Escribe aquí tu opinión"
+                placeholder={t('formu.escribe_opinion')} // Placeholder traducido
                 id="opinion"
                 value={opinion}
                 onChange={(e) => setOpinion(e.target.value)}

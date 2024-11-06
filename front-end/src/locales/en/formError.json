@@ -1,0 +1,17 @@
+{
+  "formTitle": "Error Report Form",
+  "typeErrorLabel": "Error Type",
+  "selectPlaceholder": "Select the type of error",
+  "errorVisual": "Visual Error",
+  "error404": "404 Error",
+  "errorInfiniteLoad": "Infinite Loading Error",
+  "errorOther": "Other",
+  "submitButtonSending": "Sending...",
+  "submitButton": "Submit Report",
+  "successTitle": "Thank you!",
+  "successMessage": "Your error report has been successfully submitted.",
+  "errorTitle": "Error",
+  "errorMessage": "There was a problem submitting the report. Please try again.",
+  "warningTitle": "Warning",
+  "warningMessage": "Please complete all fields"
+}

@@ -1,12 +1,19 @@
 {
     "titulo": "Satisfaction Survey",
-    "pregunta_satisfaccion": "On a scale from 1 to 5, how was the tour?",
+    "pregunta_satisfaccion": "On a scale of one to five, how was the tour?",
     "pregunta_amabilidad": "How was the guide's friendliness?",
     "pregunta_camino": "How was the route during the tour?",
     "pregunta_recomendacion": "Would you recommend this tour to others?",
-    "pregunta_transporte": "How was your experience with the transport?",
+    "pregunta_transporte": "How was your experience with the transportation?",
     "pregunta_costo": "How would you rate the cost of the tour?",
-    "pregunta_opinion": "What areas do you think we could improve?",
-    "enviar": "Submit",
-    "enviando": "Submitting..."
+    "pregunta_opinion": "In what areas do you think we could improve?",
+    "enviar": "Send",
+    "enviando": "Sending...",
+    "buen_trabajo": "Good job!",
+    "opinion_enviada": "Your feedback has been sent successfully!",
+    "error": "Error",
+    "problema_opinion": "There was a problem sending the feedback. Please try again.",
+    "advertencia": "Warning",
+    "completar_campos": "Please complete all fields",
+    "escribe_opinion": "Write your feedback here"
 }
