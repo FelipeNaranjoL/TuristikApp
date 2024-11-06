@@ -1,4 +1,7 @@
 {
+  "iniciar_tutorial": "Démarrer le Tutoriel",
+  "stepSelectType": "Sélectionnez le type d'erreur dans la liste déroulante.",
+  "stepSubmitButton": "Cliquez sur le bouton Envoyer pour compléter le formulaire.",
   "formTitle": "Formulaire de Rapport d'Erreur",
   "typeErrorLabel": "Type d'Erreur",
   "selectPlaceholder": "Sélectionnez le type d'erreur",
@@ -6,7 +9,7 @@
   "error404": "Erreur 404",
   "errorInfiniteLoad": "Erreur de Chargement Infini",
   "errorOther": "Autre",
-  "submitButtonSending": "Envoi...",
+  "submitButtonSending": "Envoi en cours...",
   "submitButton": "Soumettre le Rapport",
   "successTitle": "Merci !",
   "successMessage": "Votre rapport d'erreur a été envoyé avec succès.",

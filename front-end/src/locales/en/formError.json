@@ -1,4 +1,7 @@
 {
+  "iniciar_tutorial": "Start Tutorial",
+  "stepSelectType": "Select the type of error from the dropdown list.",
+  "stepSubmitButton": "Click the Submit button to complete the form.",
   "formTitle": "Error Report Form",
   "typeErrorLabel": "Error Type",
   "selectPlaceholder": "Select the type of error",
