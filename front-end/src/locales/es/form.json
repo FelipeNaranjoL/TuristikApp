@@ -15,5 +15,9 @@
     "problema_opinion": "Hubo un problema al enviar la opinión. Intenta de nuevo.",
     "advertencia": "Advertencia",
     "completar_campos": "Por favor, completa todos los campos",
-    "escribe_opinion": "Escribe aquí tu opinión"
+    "escribe_opinion": "Escribe aquí tu opinión",
+    "tutorial_seleccionar_opciones": "Selecciona una alternativa según tu nivel de satisfacción.",
+    "tutorial_boton_voz": "Presiona el botón de micrófono para escuchar la pregunta.",
+    "tutorial_boton_enviar": "Presiona el botón 'Enviar' para enviar el formulario.",
+    "iniciar_tutorial": "Iniciar Tutorial"
 }

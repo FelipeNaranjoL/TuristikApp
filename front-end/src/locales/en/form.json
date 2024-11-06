@@ -12,8 +12,12 @@
     "buen_trabajo": "Good job!",
     "opinion_enviada": "Your feedback has been sent successfully!",
     "error": "Error",
-    "problema_opinion": "There was a problem sending the feedback. Please try again.",
+    "problema_opinion": "There was a problem sending your feedback. Please try again.",
     "advertencia": "Warning",
     "completar_campos": "Please complete all fields",
-    "escribe_opinion": "Write your feedback here"
+    "escribe_opinion": "Write your feedback here",
+    "tutorial_seleccionar_opciones": "Select an option according to your level of satisfaction.",
+    "tutorial_boton_voz": "Press the microphone button to hear the question.",
+    "tutorial_boton_enviar": "Press the 'Send' button to submit the form.",
+    "iniciar_tutorial": "Start Tutorial"
 }

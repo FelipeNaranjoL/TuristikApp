@@ -1,7 +1,7 @@
 {
     "titulo": "Enquête de Satisfaction",
     "pregunta_satisfaccion": "Sur une échelle de un à cinq, comment avez-vous trouvé le tour ?",
-    "pregunta_amabilidad": "Comment était l'amabilité du guide ?",
+    "pregunta_amabilidad": "Comment était la convivialité du guide ?",
     "pregunta_camino": "Comment était l'itinéraire pendant le tour ?",
     "pregunta_recomendacion": "Recommanderiez-vous ce tour à d'autres ?",
     "pregunta_transporte": "Comment s'est passée votre expérience avec le transport ?",
@@ -12,8 +12,12 @@
     "buen_trabajo": "Bon travail !",
     "opinion_enviada": "Votre avis a été envoyé avec succès !",
     "error": "Erreur",
-    "problema_opinion": "Il y a eu un problème lors de l'envoi de l'avis. Veuillez réessayer.",
+    "problema_opinion": "Il y a eu un problème lors de l'envoi de votre avis. Veuillez réessayer.",
     "advertencia": "Avertissement",
     "completar_campos": "Veuillez remplir tous les champs",
-    "escribe_opinion": "Écrivez votre avis ici"
+    "escribe_opinion": "Écrivez votre avis ici",
+    "tutorial_seleccionar_opciones": "Sélectionnez une option selon votre niveau de satisfaction.",
+    "tutorial_boton_voz": "Appuyez sur le bouton du microphone pour écouter la question.",
+    "tutorial_boton_enviar": "Appuyez sur le bouton 'Envoyer' pour soumettre le formulaire.",
+    "iniciar_tutorial": "Démarrer le Tutoriel"
 }

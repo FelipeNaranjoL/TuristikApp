@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { saveError } from "../utils/bbddFirebase";
 import Swal from 'sweetalert2';
 import { useTranslation } from 'react-i18next';
+import { Steps } from 'intro.js-react';
+import 'intro.js/introjs.css';
 
 // Interfaz para los datos del formulario de error
 interface ErrorReportData {
@@ -17,6 +19,7 @@ const FormError: React.FC = () => {
     const { t } = useTranslation();
     const [tipoError, setTipoError] = useState<string>('');
     const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+    const [stepsEnabled, setStepsEnabled] = useState<boolean>(false);
 
     const sitiosTuristicos = [
         "Parque Nacional Torres del Paine",
@@ -88,31 +91,59 @@ const FormError: React.FC = () => {
         }
     };
 
-    return (
-        <form className="contenido" id="formError" onSubmit={handleSubmit}>
-            <h2>{t("formError.formTitle")}</h2>
+    const steps = [
+        {
+            element: '#tipoError',
+            intro: t('formError.stepSelectType'),
+            position: 'right'
+        },
+        {
+            element: '.btn-primary',
+            intro: t('formError.stepSubmitButton'),
+            position: 'bottom'
+        }
+    ];
 
-            <div className="mb-3">
-                <label htmlFor="tipoError" className="form-label">{t("formError.typeErrorLabel")}</label>
-                <select
-                    id="tipoError"
-                    className="form-select"
-                    value={tipoError}
-                    onChange={(e) => setTipoError(e.target.value)}
-                    required
-                >
-                    <option value="">{t("formError.selectPlaceholder")}</option>
-                    <option value="Error Visual">{t("formError.errorVisual")}</option>
-                    <option value="Error 404">{t("formError.error404")}</option>
-                    <option value="Error carga infinita">{t("formError.errorInfiniteLoad")}</option>
-                    <option value="Otro">{t("formError.errorOther")}</option>
-                </select>
+    return (
+        <>
+            <div className="text-center mb-3">
+                <button onClick={() => setStepsEnabled(true)} className="btn">
+                    {t('formError.iniciar_tutorial')}
+                </button>
             </div>
 
-            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
-                {isSubmitting ? t("formError.submitButtonSending") : t("formError.submitButton")}
-            </button>
-        </form>
+            <Steps
+                enabled={stepsEnabled}
+                steps={steps}
+                initialStep={0}
+                onExit={() => setStepsEnabled(false)}
+            />
+
+            <form className="contenido" id="formError" onSubmit={handleSubmit}>
+                <h2>{t("formError.formTitle")}</h2>
+
+                <div className="mb-3">
+                    <label htmlFor="tipoError" className="form-label">{t("formError.typeErrorLabel")}</label>
+                    <select
+                        id="tipoError"
+                        className="form-select"
+                        value={tipoError}
+                        onChange={(e) => setTipoError(e.target.value)}
+                        required
+                    >
+                        <option value="">{t("formError.selectPlaceholder")}</option>
+                        <option value="Error Visual">{t("formError.errorVisual")}</option>
+                        <option value="Error 404">{t("formError.error404")}</option>
+                        <option value="Error carga infinita">{t("formError.errorInfiniteLoad")}</option>
+                        <option value="Otro">{t("formError.errorOther")}</option>
+                    </select>
+                </div>
+
+                <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+                    {isSubmitting ? t("formError.submitButtonSending") : t("formError.submitButton")}
+                </button>
+            </form>
+        </>
     );
 };
 
