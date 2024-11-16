@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Cambia 'main' si tu rama principal tiene otro nombre
+      - main  # Cambia 'main' al nombre de tu rama principal
 
 jobs:
   build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Ajusta según la versión de tu proyecto
+          node-version: '20'  # Ajusta la versión de Node.js según tu proyecto
 
       - name: Install dependencies
         run: npm install
@@ -27,4 +27,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # Ruta de la carpeta generada por Vite
+          publish_dir: ./dist  # Ajusta esto al directorio de tu salida de build
