@@ -1,25 +1,25 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Importa el enrutador y las rutas
-import Formulario from './pages/FormularioSatisfaccion'; // Importa la página del formulario de satisfacción
-import Comprobando from './pages/Comprobando'; // Importa la página de comprobación
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Formulario from './pages/FormularioSatisfaccion';
+import Comprobando from './pages/Comprobando';
 import TokenRequerido from './pages/TokenRequerido';
-import Header from './components/Header'; // Importa el componente de cabecera (Header) global
-import Footer from './components/Footer'; // Importa el componente de pie de página (Footer) opcional
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ExportarDatos from './pages/ExportarDatos';
 import FormError from './pages/FormError';
+
 const App: React.FC = () => {
   return (
-    <Router>
-      <Header /> {/* Incluye el componente de cabecera en todas las páginas */}
+    <Router basename="/TuristikApp"> {/* Agrega basename para que las rutas sean relativas a /TuristikApp */}
+      <Header />
       <Routes>
-        {/* Define las rutas: una para el formulario de satisfacción y otra para la comprobación con un parámetro dinámico en la URL */}
         <Route path="/formulario-satisfaccion" element={<Formulario />} />
         <Route path=":id" element={<Comprobando />} />
-        <Route path="/TuristikApp/" element={<TokenRequerido />} /> {/* Nueva ruta raíz */}
+        <Route path="/" element={<TokenRequerido />} /> {/* Modifica la ruta raíz */}
         <Route path="/exportar-datos" element={<ExportarDatos />} />
         <Route path="/error" element={<FormError />} />
       </Routes>
-      <Footer /> {/* Incluye el pie de página opcional en todas las páginas */}
+      <Footer />
     </Router>
   );
 };
