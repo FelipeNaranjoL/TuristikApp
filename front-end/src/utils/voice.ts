@@ -3,8 +3,7 @@ let isInitialized = false;
 export function initializeVoice() {
     if (isInitialized) return;
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    let voices: SpeechSynthesisVoice[] = [];
+    //let voices: SpeechSynthesisVoice[] = [];
     const utterance = new SpeechSynthesisUtterance();
 
     function textToSpeak(container: HTMLElement) {
@@ -14,7 +13,7 @@ export function initializeVoice() {
 
     document.addEventListener("DOMContentLoaded", () => {
         window.speechSynthesis.addEventListener("voiceschanged", () => {
-            voices = window.speechSynthesis.getVoices();
+            //voices = window.speechSynthesis.getVoices();
         });
     });
 
