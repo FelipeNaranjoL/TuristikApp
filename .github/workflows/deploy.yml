@@ -3,7 +3,7 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Cambia 'main' al nombre de tu rama principal
+      - main  # Rama principal desde donde se construirá y desplegará
 
 jobs:
   build-and-deploy:
@@ -15,7 +15,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Ajusta la versión de Node.js según tu proyecto
+          node-version: '18'  # Ajusta la versión de Node.js según tu proyecto
 
       - name: Install dependencies
         run: npm install
@@ -27,4 +27,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist  # Ajusta esto al directorio de tu salida de build
+          publish_dir: ./dist  # Directorio de salida de la construcción
+          publish_branch: main  # Desplegar en la rama main
+          destination_dir: docs  # Carpeta en la que GitHub Pages buscará el index.html
