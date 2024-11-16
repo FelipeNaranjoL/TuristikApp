@@ -15,7 +15,7 @@ const App: React.FC = () => {
         {/* Define las rutas: una para el formulario de satisfacción y otra para la comprobación con un parámetro dinámico en la URL */}
         <Route path="/formulario-satisfaccion" element={<Formulario />} />
         <Route path=":id" element={<Comprobando />} />
-        <Route path="/" element={<TokenRequerido />} /> {/* Nueva ruta raíz */}
+        <Route path="/TuristikApp/" element={<TokenRequerido />} /> {/* Nueva ruta raíz */}
         <Route path="/exportar-datos" element={<ExportarDatos />} />
         <Route path="/error" element={<FormError />} />
       </Routes>
