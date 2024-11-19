@@ -1,14 +1,16 @@
-import express, { Request, Response } from 'express'; // Importamos express y los tipos Request y Response para tipar los parámetros de las funciones
+import express, { Request, Response } from 'express';
+const routes = require('./routes/routes.js'); // Importa tu archivo de enrutador
 
-const app = express();  // Creamos una instancia de la aplicación Express
-const port = 3001;  // Definimos el puerto en el que escuchará la aplicación
+const app = express();
 
-// Definimos una ruta GET para la raíz del servidor
+app.use('/', routes);
+
+// Agrega una ruta para la raíz
 app.get('/', (req: Request, res: Response) => {
-  res.send('Hello from TuristikApp Back-End');  // Enviamos una respuesta con un mensaje de bienvenida
+  res.send('Back-End de TuristikApp funcionando exitosamente');
 });
 
-// Ponemos el servidor a escuchar en el puerto definido
+const port = 3001;
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);  // Mostramos un mensaje en consola indicando que el servidor está corriendo
+  console.log(`Server running on http://localhost:${port}`);
 });

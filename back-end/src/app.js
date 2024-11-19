@@ -1,4 +1,4 @@
-const { db } = require('../config/firestoreConfig');  // Importa la configuración de Firestore desde el archivo firestoreConfig.js
+const { db } = require('./config/firestoreConfig');  // Importa la configuración de Firestore desde el archivo firestoreConfig.js
 
 // Función para obtener todas las opiniones desde la colección "opiniones" en Firestore
 const getOpiniones = async () => {
