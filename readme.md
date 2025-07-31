@@ -1,3 +1,4 @@
+
 # TuristikApp
 
 > 💡 **Nota** Entrega de portafolio para el instituto DuocUc
@@ -20,61 +21,64 @@
 
 ## 🗂️ Estructura del Proyecto
 
+```bash
 TuristikApp/
-├── front-end/                        # Aplicación web (interfaz de usuario)
-│   ├── node_modules/                # Dependencias de front-end
-│   ├── public/                      # Archivos públicos (HTML, imágenes)
-│   │   └── images/                  # Imágenes utilizadas en la aplicación
-│   ├── src/                         # Código fuente principal
-│   │   ├── api/                     # Llamadas a APIs externas
-│   │   ├── assets/                  # Archivos estáticos (logos, fuentes)
-│   │   │   └── react.svg            # Icono React utilizado en la interfaz
-│   │   ├── components/              # Componentes reutilizables de UI
-│   │   │   ├── ChatHistory/         # Muestra historial de interacciones con el chatbot
-│   │   │   ├── Loading/             # Indicador de carga para acciones asincrónicas
-│   │   │   ├── Footer.tsx           # Pie de página común
-│   │   │   ├── Form.tsx             # Formulario de entrada de datos
-│   │   │   ├── Header.tsx           # Encabezado de la aplicación
-│   │   │   ├── Timeline.tsx         # Línea de tiempo para mostrar progreso
-│   │   │   └── chat.tsx             # Componente principal del chatbot
-│   │   ├── hooks/                   # Hooks personalizados (lógica reutilizable)
-│   │   ├── locales/                 # Archivos de traducción (i18n)
-│   │   ├── pages/                   # Páginas del sitio (rutas principales)
-│   │   ├── routes/                  # Configuración de rutas (dinámicas o estáticas)
-│   │   ├── services/                # Servicios que conectan con Firebase y otras APIs
-│   │   ├── styles/                  # Estilos CSS / Tailwind / SCSS
-│   │   ├── test/                    # Pruebas unitarias de componentes
-│   │   ├── types/                   # Tipos TypeScript personalizados
-│   │   ├── utils/                   # Funciones utilitarias (ej. voz, fuentes, firebase)
-│   │   ├── App.tsx                  # Componente raíz del front-end
-│   │   ├── i18n.ts                  # Configuración de internacionalización
-│   │   ├── index.css                # Estilos globales
-│   │   ├── main.tsx                 # Punto de entrada de React
-│   │   └── vite-env.d.ts            # Tipos generados para Vite + TypeScript
-│   ├── .eslintrc.json              # Configuración para el linter ESLint
-│   ├── jest.config.js              # Configuración de pruebas unitarias (Jest)
-│   ├── postcss.config.js           # Configuración para PostCSS
-│   ├── tailwind.config.js          # Configuración de Tailwind CSS
-│   ├── tsconfig*.json              # Configuraciones de TypeScript
-│   ├── vite.config.ts              # Configuración del bundler Vite
-│   └── package.json                # Dependencias y scripts del front-end
+├── front-end/                   # Cliente (React, TypeScript, Tailwind, Gemini)
+│   ├── node_modules/           # Dependencias
+│   ├── public/                 # Archivos estáticos
+│   │   └── images/            # Imágenes utilizadas
+│   ├── src/                    # Código fuente
+│   │   ├── api/               # Servicios de red
+│   │   ├── assets/            # Recursos (imágenes, logos, etc.)
+│   │   │   └── react.svg
+│   │   ├── components/        # Componentes reutilizables
+│   │   │   ├── ChatHistory/   # Historial del chat IA
+│   │   │   ├── Loading/       # Indicador de carga
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Form.tsx
+│   │   │   ├── Header.tsx
+│   │   │   ├── Timeline.tsx
+│   │   │   └── chat.tsx
+│   │   ├── hooks/             # Hooks personalizados
+│   │   ├── locales/           # Archivos de traducción i18n
+│   │   ├── pages/             # Páginas del sitio
+│   │   ├── routes/            # Rutas definidas
+│   │   ├── services/          # Servicios (Firebase, IA, etc.)
+│   │   ├── styles/            # Estilos CSS/Tailwind
+│   │   ├── test/              # Pruebas
+│   │   ├── types/             # Tipos TypeScript
+│   │   ├── utils/             # Utilidades varias
+│   │   ├── App.tsx            # Componente raíz
+│   │   ├── i18n.ts            # Configuración de traducción
+│   │   ├── index.css          # CSS global
+│   │   ├── main.tsx           # Punto de entrada principal
+│   │   └── vite-env.d.ts
+│   ├── .eslintrc.json
+│   ├── jest.config.js
+│   ├── postcss.config.js
+│   ├── tailwind.config.js
+│   ├── tsconfig*.json
+│   ├── vite.config.ts
+│   └── package.json
+└── back-end/                   # Servidor (Node.js, Express, Firebase Admin)
+    ├── node_modules/
+    ├── src/
+    │   ├── config/            # Configuraciones del servidor
+    │   ├── controllers/       # Lógica de negocio
+    │   ├── middlewares/       # Middleware Express
+    │   ├── models/            # Modelos de datos (Firebase)
+    │   ├── routes/            # Endpoints de la API
+    │   ├── services/          # Servicios auxiliares
+    │   ├── utils/             # Utilidades generales
+    │   └── keyProyecto.json   # Clave privada Firebase
+    ├── tests/                 # Pruebas del back-end
+    ├── .eslintrc.json
+    ├── jest.config.js
+    ├── tsconfig.json
+    ├── package*.json
+```
 
-└── back-end/                        # Servidor y lógica del API (Node + TS)
-    ├── node_modules/               # Dependencias del back-end
-    ├── src/                        # Código fuente del back
-    │   ├── config/                 # Configuraciones generales (como Firebase)
-    │   ├── controllers/            # Controladores de lógica para rutas
-    │   ├── middlewares/            # Middleware de autenticación/validaciones
-    │   ├── models/                 # Modelos de datos (opcional si se escala)
-    │   ├── routes/                 # Definición de rutas (endpoints API)
-    │   ├── services/               # Servicios que interactúan con Firestore
-    │   ├── utils/                  # Inicialización del servidor y helpers
-    │   └── keyProyecto.json        # Clave de acceso a Firebase (debe estar en .gitignore)
-    ├── tests/                      # Pruebas unitarias del back-end
-    ├── .eslintrc.json              # ESLint para el back-end
-    ├── jest.config.js              # Configuración Jest
-    ├── tsconfig.json               # Configuración TypeScript
-    ├── package*.json               # Dependencias del back-end
+---
 
 ## ▶️ Comandos para Ejecutar el Proyecto
 
@@ -110,4 +114,3 @@ Servidor disponible en `http://localhost:3000` (por defecto).
 |             | Iniciar desarrollo    | `npm run dev` |
 | `back-end`  | Instalar dependencias | `npm install` |
 |             | Iniciar desarrollo    | `npm run dev` |
-
